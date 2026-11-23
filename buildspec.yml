@@ -1,0 +1,18 @@
+
+version: 0.2
+
+phases:
+  build:
+    commands:
+      - echo "Building Threadline storefront..."
+      - test -f static/index.html
+      - test -f static/styles.css
+      - test -f static/app.js
+      - mkdir -p dist
+      - cp -R static/. dist/
+      - echo "Build completed successfully."
+
+artifacts:
+  base-directory: dist
+  files:
+    - '**/*'
